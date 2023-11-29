@@ -37,7 +37,7 @@ function Candidate() {
           candidateName,
           candidateDescription
         );
-        await addcandidate;
+        await addcandidate.await();
         alert("Candidate added successfully");
       } catch (error) {
         alert("Error adding candidate: ", error);
