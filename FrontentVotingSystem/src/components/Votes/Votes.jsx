@@ -44,7 +44,7 @@ function Voters() {
     alert(contract);
     const amount = { value: 10000 };
     const transaction = await contract.buyTokens(amount);
-    await transaction.wait();
+    await transaction;
     alert("Transaction is done");
   };
 
@@ -52,7 +52,7 @@ function Voters() {
     if (state.contract && voterAge) {
       try {
         const ages = await state.contract.setVoterAge(voterAge);
-        await ages.await();
+        await ages;
         alert("Voter age set successfully to: " + voterAge);
       } catch (error) {
         alert("Error setting voter age: " + error);
@@ -71,7 +71,7 @@ function Voters() {
     if (state.contract && selectedCandidate) {
       try {
         const votes = await state.contract.vote(selectedCandidate);
-        await votes.await();
+        await votes;
         alert("Voted successfully for candidate: " + selectedCandidate);
       } catch (error) {
         alert("Error voting: " + error);
